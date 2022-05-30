@@ -44,6 +44,18 @@ app.get("/", (req, res) => {
 	}
 });
 
+app.get("/test", (req, res) => {
+	if (req.session.currentUser) {
+		res.render("test.ejs", {
+			currentUser: req.session.currentUser
+		});
+	} else {
+		res.render("index.ejs", {
+			currentUser: req.session.currentUser
+		});
+	}
+});
+
 // CHECK DATABASE CONNECTION -------------------
 const db = mongoose.connection;
 
