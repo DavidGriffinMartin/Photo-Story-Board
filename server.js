@@ -4,6 +4,8 @@ const session = require("express-session");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 require("dotenv").config();
+
+// REQUIRE ROUTER DEPENDENCIES -----------------
 const userController = require("./controllers/users");
 const sessionsController = require("./controllers/sessions");
 
