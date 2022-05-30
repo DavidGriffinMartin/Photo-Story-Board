@@ -14,52 +14,54 @@ const app = express();
 
 // CONNECT MONGO TO ATLAS ----------------------
 mongoose.connect(process.env.DATABASE_URL, {
-	useNewUrlParser: true,
-	useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 
 // MOUNT MIDDLEWARE ----------------------------
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(
-    session({
-        secret: process.env.SECRET,
-        resave: false,
-        saveUninitialized: false,
-    })
+  session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false,
+  })
 );
 app.use("/users", userController);
 app.use("/sessions", sessionsController);
 
 // INDEX ROUTE ---------------------------------
 app.get("/", (req, res) => {
-	if (req.session.currentUser) {
-		res.render("dashboard.ejs", {
-			currentUser: req.session.currentUser
-		});
-	} else {
-		res.render("index.ejs", {
-			currentUser: req.session.currentUser
-		});
-	}
+  if (req.session.currentUser) {
+    res.render("dashboard.ejs", {
+      currentUser: req.session.currentUser,
+    });
+  } else {
+    res.render("index.ejs", {
+      currentUser: req.session.currentUser,
+    });
+  }
 });
 
 app.get("/test", (req, res) => {
-	if (req.session.currentUser) {
-		res.render("test.ejs", {
-			currentUser: req.session.currentUser
-		});
-	} else {
-		res.render("index.ejs", {
-			currentUser: req.session.currentUser
-		});
-	}
+  if (req.session.currentUser) {
+    res.render("test.ejs", {
+      currentUser: req.session.currentUser,
+    });
+  } else {
+    res.render("index.ejs", {
+      currentUser: req.session.currentUser,
+    });
+  }
 });
 
 // CHECK DATABASE CONNECTION -------------------
 const db = mongoose.connection;
 
-db.on("error", (err) => console.log(err.message + " MongoDB has recieved an error."));
+db.on("error", (err) =>
+  console.log(err.message + " MongoDB has recieved an error.")
+);
 db.on("connected", () => console.log("MongoDB is connected."));
 db.on("disconnected", () => console.log("MongoDB has disconnected."));
 
@@ -68,5 +70,5 @@ const PORT = process.env.PORT;
 
 // DIRECT APPLICATION FOCUS --------------------
 app.listen(PORT, () => {
-    console.log(`Server listening @ port: ${PORT}`);
+  console.log(`Server listening @ port: ${PORT}`);
 });
