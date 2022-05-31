@@ -6,6 +6,7 @@ const methodOverride = require("method-override");
 require("dotenv").config();
 
 // REQUIRE ROUTER DEPENDENCIES -----------------
+const postsController = require("./controllers/posts");
 const userController = require("./controllers/users");
 const sessionsController = require("./controllers/sessions");
 
@@ -28,29 +29,18 @@ app.use(
     saveUninitialized: false,
   })
 );
+app.use("/", postsController);
 app.use("/users", userController);
 app.use("/sessions", sessionsController);
 
-// INDEX ROUTE ---------------------------------
-app.get("/", (req, res) => {
-  if (req.session.currentUser) {
-    res.render("dashboard.ejs", {
-      currentUser: req.session.currentUser,
-    });
-  } else {
-    res.render("index.ejs", {
-      currentUser: req.session.currentUser,
-    });
-  }
-});
-
+// TEST ROUTE ---------------------------------
 app.get("/test", (req, res) => {
   if (req.session.currentUser) {
     res.render("test.ejs", {
       currentUser: req.session.currentUser,
     });
   } else {
-    res.render("index.ejs", {
+    res.render("sessions/new.ejs", {
       currentUser: req.session.currentUser,
     });
   }
