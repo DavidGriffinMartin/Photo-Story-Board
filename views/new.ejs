@@ -4,6 +4,12 @@
 
   <body>
     <%- include("./partials/nav.ejs") %>
-    <h1>Dashboard</h1>
+    <h1>New</h1>
+    <form action="/" method="POST">
+      Image: <input type="text" name="image" /><br />
+      Title: <input type="text" name="title" /><br />
+      Body: <input type="text" name="body" /><br />
+      <input type="submit" name="" value="Add Post" />
+    </form>
   </body>
 </html>

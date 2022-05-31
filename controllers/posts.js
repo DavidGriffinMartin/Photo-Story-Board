@@ -4,17 +4,17 @@ const postsRouter = express.Router();
 const Post = require("../models/post");
 
 // INDEX ROUTE ---------------------------------
-postsRouter.get("/", (req, res) => {
-  if (req.session.currentUser) {
-    res.render("dashboard.ejs", {
-      currentUser: req.session.currentUser,
-    });
-  } else {
-    res.render("index.ejs", {
-      currentUser: req.session.currentUser,
-    });
-  }
-});
+// postsRouter.get("/", (req, res) => {
+//   if (req.session.currentUser) {
+//     res.render("dashboard.ejs", {
+//       currentUser: req.session.currentUser,
+//     });
+//   } else {
+//     res.render("index.ejs", {
+//       currentUser: req.session.currentUser,
+//     });
+//   }
+// });
 
 // postsRouter.get("/", (req, res) => {
 //   if (req.session.currentUser) {
@@ -22,7 +22,7 @@ postsRouter.get("/", (req, res) => {
 //       currentUser: req.session.currentUser,
 //     })
 //     Post.find({}, (error, allPosts) => {
-//       res.render("index.ejs", {
+//       res.render("dashboard.ejs", {
 //         posts: allPosts,
 //       });
 //     });
@@ -32,6 +32,21 @@ postsRouter.get("/", (req, res) => {
 //     });
 //   }
 // });
+
+postsRouter.get("/", (req, res) => {
+  if (req.session.currentUser) {
+    Post.find({}, (error, allPosts) => {
+      res.render("dashboard.ejs", {
+        posts: allPosts,
+        currentUser: req.session.currentUser,
+      })
+    })
+  } else {
+    res.render("index.ejs", {
+      currentUser: req.session.currentUser,
+    });
+  }
+});
 
 // NEW ROUTE -----------------------------------
 postsRouter.get("/new", (req, res) => {
@@ -51,6 +66,11 @@ postsRouter.get("/new", (req, res) => {
 // UPDATE ROUTE --------------------------------
 
 // CREATE ROUTE --------------------------------
+postsRouter.post("/", (req, res) => {
+	Post.create(req.body, (error, createdPost) => {
+        res.redirect("/");
+	});
+});
 
 // EDIT ROUTE ----------------------------------
 
