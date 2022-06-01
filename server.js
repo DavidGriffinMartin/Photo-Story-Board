@@ -29,7 +29,7 @@ app.use(
     saveUninitialized: false,
   })
 );
-app.use("/", postsController);
+app.use("/crud", postsController);
 app.use("/users", userController);
 app.use("/sessions", sessionsController);
 
