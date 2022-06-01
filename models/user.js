@@ -4,10 +4,10 @@ const Schema = mongoose.Schema;
 
 // SET UP SCHEMA -------------------------------
 const userSchema = Schema({
-    email: { type: String, unique: true, required: true },
-    password: { type: String, required: true }
-  });
-  
+  email: { type: String, unique: true, required: true },
+  password: { type: String, required: true },
+});
+
 // LINK SCHEMA MODEL TO VARIABLE ---------------
 const User = mongoose.model("User", userSchema);
 

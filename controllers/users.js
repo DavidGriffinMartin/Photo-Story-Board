@@ -6,7 +6,7 @@ const User = require("../models/user.js");
 
 // NEW USER ROUTE ------------------------------
 userRouter.get("/new", (req, res) => {
-  res.render("users/new.ejs", {
+  res.render("users/newUser.ejs", {
     currentUser: req.session.currentUser,
   });
 });
