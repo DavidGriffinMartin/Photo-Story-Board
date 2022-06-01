@@ -1,6 +1,7 @@
 // REQUIRE DEPENDENCIES ------------------------
 const express = require("express");
 const session = require("express-session");
+const css = require("express-static");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 require("dotenv").config();
@@ -32,6 +33,7 @@ app.use(
 app.use("/crud", postsController);
 app.use("/users", userController);
 app.use("/sessions", sessionsController);
+app.use(css("./views/public"))
 
 // TEST ROUTE ---------------------------------
 app.get("/", (req, res) => {
