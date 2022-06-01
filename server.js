@@ -40,7 +40,7 @@ app.get("/test", (req, res) => {
       currentUser: req.session.currentUser,
     });
   } else {
-    res.render("sessions/new.ejs", {
+    res.render("sessions/newSession.ejs", {
       currentUser: req.session.currentUser,
     });
   }
