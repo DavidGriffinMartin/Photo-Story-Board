@@ -1,5 +1,5 @@
 <style>
-  ul {
+  .nav {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -8,10 +8,22 @@
     /* position: fixed;
     top: 0;
     width: 100%; */
+	}
+
+  .nav > li {
+    float: left;
   }
 
-  li {
-    float: left;
+  .nav > li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  .nav > li a:hover {
+    background-color: #111;
   }
 
 	#logOut {
@@ -25,33 +37,21 @@
 		font-family : inherit;
 		font-size: 1em;
 	}
-
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-
-  li a:hover {
-    background-color: #111;
-  }
 </style>
 
 <nav>
   <% if(currentUser) { %>
-  <ul>
-    <li><a href="/">Home</a></li>
-		<li><a href="/new">New</a></li>
+  <ul class="nav">
+    <li><a href="/crud">Home</a></li>
+		<li><a href="/crud/new">New</a></li>
     <li><a href="/test">Test</a></li>
     <li></li><form action="/sessions?_method=DELETE" method="POST">
       <input id="logOut" type="submit" value="Log Out" />
     </form></li>
   </ul>
   <% } else { %>
-  <ul>
-    <li><a href="/">Home</a></li>
+		<ul class="nav">
+    <li><a href="/crud">Home</a></li>
     <li style="float: right"><a href="/sessions/new">Login</a></li>
 		<li style="float: right"><a href="/users/new">Register</a></li>
   </ul>

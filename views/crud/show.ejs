@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("./partials/head.ejs") %>
+  <%- include("../partials/head.ejs") %>
 
   <body>
-    <%- include("./partials/nav.ejs") %>
+    <%- include("../partials/nav.ejs") %>
     <h1>Show</h1>
     <ul>
       <li><%=post.image%></li>
@@ -11,12 +11,11 @@
       <li><%=post.body%></li>
     </ul>
     <form
-      action="/<%=post.id %>?_method=DELETE"
+      action="/crud/<%=post.id %>?_method=DELETE"
       method="POST"
-      style="display: inline; margin-left: 15px"
     >
+      <a href="/crud/<%=post._id %>/edit">Edit</a></br>
       <input type="submit" value="DELETE" />
-      <a href="/<%=post._id %>/edit" style="margin-left: 15px">Edit</a>
     </form>
   </body>
 </html>

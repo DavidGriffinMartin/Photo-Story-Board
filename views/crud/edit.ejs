@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("./partials/head.ejs") %>
+  <%- include("../partials/head.ejs") %>
 
   <body>
-    <%- include("./partials/nav.ejs") %>
+    <%- include("../partials/nav.ejs") %>
     <h1>Edit</h1>
   </body>
-  <form action="/<%=post._id%>?_method=PUT" method="POST">
+  <form action="/crud/<%=post._id%>?_method=PUT" method="POST">
     <input placeholder="Image" type="text" name="image" /><br />
     <input placeholder="Title" type="text" name="title" /><br />
     <input placeholder="Body" type="text" name="body" /><br />
