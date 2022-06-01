@@ -13,7 +13,7 @@ postsRouter.get("/", (req, res) => {
       })
     })
   } else {
-    res.render("index.ejs", {
+    res.render("sessions/newSession.ejs", {
       currentUser: req.session.currentUser,
     });
   }
@@ -26,7 +26,7 @@ postsRouter.get("/new", (req, res) => {
       currentUser: req.session.currentUser,
     });
   } else {
-    res.render("index.ejs", {
+    res.render("sessions/newSession.ejs", {
       currentUser: req.session.currentUser,
     });
   }
@@ -68,7 +68,7 @@ postsRouter.get("/:id/edit", (req, res) => {
       });
     });
   } else {
-    res.render("index.ejs", {
+    res.render("sessions/newSession.ejs", {
       currentUser: req.session.currentUser,
     });
   }
@@ -84,7 +84,7 @@ postsRouter.get("/:id", (req, res) => {
       });
     });
   } else {
-    res.render("index.ejs", {
+    res.render("sessions/newSession.ejs", {
       currentUser: req.session.currentUser,
     });
   }
