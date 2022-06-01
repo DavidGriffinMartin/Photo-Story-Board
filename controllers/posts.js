@@ -33,8 +33,23 @@ postsRouter.get("/new", (req, res) => {
 });
 
 // DELETE ROUTE --------------------------------
+postsRouter.delete("/:id", (req, res) => {
+	Post.findByIdAndDelete(req.params.id, (error, deletedPost) => {
+		res.redirect("/");
+	});
+});
 
 // UPDATE ROUTE --------------------------------
+postsRouter.put("/:id", (req, res) => {
+	Post.findByIdAndUpdate(
+		req.params.id,
+		req.body,
+		{ new: true },
+		(error, updatedPost) => {
+			res.redirect(`/${req.params.id}`)
+		}
+	);
+});
 
 // CREATE ROUTE --------------------------------
 postsRouter.post("/", (req, res) => {
@@ -44,6 +59,20 @@ postsRouter.post("/", (req, res) => {
 });
 
 // EDIT ROUTE ----------------------------------
+postsRouter.get("/:id/edit", (req, res) => {
+  if (req.session.currentUser) {
+    Post.findById(req.params.id, (error, foundPost) => {
+      res.render("edit.ejs", {
+        post: foundPost,
+        currentUser: req.session.currentUser,
+      });
+    });
+  } else {
+    res.render("index.ejs", {
+      currentUser: req.session.currentUser,
+    });
+  }
+});
 
 // SHOW ROUTE ----------------------------------
 postsRouter.get("/:id", (req, res) => {
