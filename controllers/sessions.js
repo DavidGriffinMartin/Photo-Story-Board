@@ -14,7 +14,7 @@ sessionsRouter.get("/new", (req, res) => {
 // DELETE SESSION ROUTE ------------------------
 sessionsRouter.delete("/", (req, res) => {
   req.session.destroy((error) => {
-    res.redirect("/");
+    res.redirect("/crud");
   });
 });
 
@@ -34,7 +34,7 @@ sessionsRouter.post("/", (req, res) => {
         );
         if (passwordMatches) {
           req.session.currentUser = foundUser;
-          res.redirect("/");
+          res.redirect("/crud");
         } else {
           res.send("Invalid credentials.");
         }

@@ -5,10 +5,13 @@
   <body>
     <%- include("../partials/nav.ejs") %>
     <h1>User Dashboard</h1>
-    <ul>
+    <div class="flex-container">
       <% posts.forEach(post => { %>
-      <li><a href="/crud/<%=post._id%>"><%=post.title%></a></li>
+        <div class="flex-item">
+          <a href="/crud/<%=post._id%>"><img src="<%=post.image%>" class="gallery-image" alt=""></a>
+          <p class="flex-item-title"><%=post.title%></p>
+        </div>
       <% }) %>
-    </ul>
+    </div>
   </body>
 </html>

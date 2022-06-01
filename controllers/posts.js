@@ -7,13 +7,13 @@ const Post = require("../models/post");
 postsRouter.get("/", (req, res) => {
   if (req.session.currentUser) {
     Post.find({}, (error, allPosts) => {
-      res.render("dashboard.ejs", {
+      res.render("crud/dashboard.ejs", {
         posts: allPosts,
         currentUser: req.session.currentUser,
       })
     })
   } else {
-    res.render("sessions/newSession.ejs", {
+    res.render("index.ejs", {
       currentUser: req.session.currentUser,
     });
   }
@@ -22,7 +22,7 @@ postsRouter.get("/", (req, res) => {
 // NEW ROUTE -----------------------------------
 postsRouter.get("/new", (req, res) => {
   if (req.session.currentUser) {
-    res.render("new.ejs", {
+    res.render("crud/new.ejs", {
       currentUser: req.session.currentUser,
     });
   } else {
@@ -35,7 +35,7 @@ postsRouter.get("/new", (req, res) => {
 // DELETE ROUTE --------------------------------
 postsRouter.delete("/:id", (req, res) => {
 	Post.findByIdAndDelete(req.params.id, (error, deletedPost) => {
-		res.redirect("/");
+		res.redirect("/crud");
 	});
 });
 
@@ -46,7 +46,7 @@ postsRouter.put("/:id", (req, res) => {
 		req.body,
 		{ new: true },
 		(error, updatedPost) => {
-			res.redirect(`/${req.params.id}`)
+			res.redirect(`/crud/${req.params.id}`)
 		}
 	);
 });
@@ -54,7 +54,7 @@ postsRouter.put("/:id", (req, res) => {
 // CREATE ROUTE --------------------------------
 postsRouter.post("/", (req, res) => {
 	Post.create(req.body, (error, createdPost) => {
-        res.redirect("/");
+        res.redirect("/crud");
 	});
 });
 
@@ -62,7 +62,7 @@ postsRouter.post("/", (req, res) => {
 postsRouter.get("/:id/edit", (req, res) => {
   if (req.session.currentUser) {
     Post.findById(req.params.id, (error, foundPost) => {
-      res.render("edit.ejs", {
+      res.render("crud/edit.ejs", {
         post: foundPost,
         currentUser: req.session.currentUser,
       });
@@ -78,7 +78,7 @@ postsRouter.get("/:id/edit", (req, res) => {
 postsRouter.get("/:id", (req, res) => {
   if (req.session.currentUser) {
     Post.findById(req.params.id, (error, foundPost) => {
-      res.render("show.ejs", {
+      res.render("crud/show.ejs", {
         post: foundPost,
         currentUser: req.session.currentUser,
       });
