@@ -4,35 +4,6 @@ const postsRouter = express.Router();
 const Post = require("../models/post");
 
 // INDEX ROUTE ---------------------------------
-// postsRouter.get("/", (req, res) => {
-//   if (req.session.currentUser) {
-//     res.render("dashboard.ejs", {
-//       currentUser: req.session.currentUser,
-//     });
-//   } else {
-//     res.render("index.ejs", {
-//       currentUser: req.session.currentUser,
-//     });
-//   }
-// });
-
-// postsRouter.get("/", (req, res) => {
-//   if (req.session.currentUser) {
-//     res.render("dashboard.ejs", {
-//       currentUser: req.session.currentUser,
-//     })
-//     Post.find({}, (error, allPosts) => {
-//       res.render("dashboard.ejs", {
-//         posts: allPosts,
-//       });
-//     });
-//   } else {
-//     res.render("index.ejs", {
-//       currentUser: req.session.currentUser,
-//     });
-//   }
-// });
-
 postsRouter.get("/", (req, res) => {
   if (req.session.currentUser) {
     Post.find({}, (error, allPosts) => {
@@ -75,6 +46,20 @@ postsRouter.post("/", (req, res) => {
 // EDIT ROUTE ----------------------------------
 
 // SHOW ROUTE ----------------------------------
+postsRouter.get("/:id", (req, res) => {
+  if (req.session.currentUser) {
+    Post.findById(req.params.id, (error, foundPost) => {
+      res.render("show.ejs", {
+        post: foundPost,
+        currentUser: req.session.currentUser,
+      });
+    });
+  } else {
+    res.render("index.ejs", {
+      currentUser: req.session.currentUser,
+    });
+  }
+});
 
 // EXPORT USER ROUTER --------------------------
 module.exports = postsRouter;
