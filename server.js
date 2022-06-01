@@ -34,6 +34,18 @@ app.use("/users", userController);
 app.use("/sessions", sessionsController);
 
 // TEST ROUTE ---------------------------------
+app.get("/", (req, res) => {
+  if (req.session.currentUser) {
+    res.render("crud/index.ejs", {
+      currentUser: req.session.currentUser,
+    });
+  } else {
+    res.render("sessions/newSession.ejs", {
+      currentUser: req.session.currentUser,
+    });
+  }
+});
+
 app.get("/test", (req, res) => {
   if (req.session.currentUser) {
     res.render("test.ejs", {
