@@ -84,7 +84,7 @@
 }
 .gallery-image:hover {
   border-radius: 30px;
-  /* opacity: 0.5; */
+  opacity: 0.5;
   filter: invert(100%);
 }
 

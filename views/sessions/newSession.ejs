@@ -4,13 +4,30 @@
 
   <body>
     <%- include("../partials/nav.ejs") %>
-    <h1>Login</h1>
-    <form action="/sessions" method="POST">
-      <label for="email">Email:</label>
-      <input type="email" name="email" id="email" />
-      <label for="password">Password:</label>
-      <input type="password" name="password" id="password" />
-      <input type="submit" value="Login" />
-    </form>
+    <div class="form-container">
+      <div class="form-image"></div>
+      <div class="form-info">
+        <h1>LOGIN</h1>
+        <form action="/sessions" method="POST">
+          <fieldset class="form-inputs">
+            <input
+              class="inp"
+              placeholder="Email"
+              type="email"
+              name="email"
+              id="email"
+            />
+            <input
+              class="inp"
+              placeholder="Password"
+              type="password"
+              name="password"
+              id="password"
+            />
+          </fieldset>
+          <input class="submit" type="submit" value="Login" />
+        </form>
+      </div>
+    </div>
   </body>
 </html>
