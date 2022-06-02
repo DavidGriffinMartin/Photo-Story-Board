@@ -38,7 +38,7 @@
 }
 
 h1 {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .flex-container {
@@ -50,7 +50,7 @@ h1 {
   padding: 5px; */
   /* background-color: #333; */
   display: grid;
-  grid-template-columns: repeat(4, max(300px, 300px));
+  grid-template-columns: repeat (4, max(200px, 200px));
   justify-content: center;
   grid-gap: 10px;
   grid-auto-flow: dense;
@@ -78,8 +78,8 @@ h1 {
 .gallery-image {
   position: relative;
   vertical-align: top;
-  height: 300px;
-  width: 300px;
+  height: 200px;
+  width: 200px;
 }
 
 .gallery-image:hover {
@@ -88,6 +88,6 @@ h1 {
 }
 
 .show-image {
-  height: 500px;
-  width: 500px;
+  height: 400px;
+  width: 400px;
 }
