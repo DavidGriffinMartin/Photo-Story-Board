@@ -1,13 +1,18 @@
 /* NAV BAR CSS */
 .nav {
   list-style-type: none;
-  margin: 0;
+  margin: auto;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #777;
   /* position: fixed;
   top: 0;
   width: 100%; */
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px #ddd, -1px -1px 10px #ddd, 1px -1px 10px #ddd,
+    -1px 1px 10px #ddd;
+  width: 60%;
+  min-width: 600px;
 }
 .nav > li {
   float: left;
@@ -20,7 +25,7 @@
   text-decoration: none;
 }
 .nav > li a:hover {
-  background-color: #111;
+  background-color: #555;
 }
 #logOut {
   float: right;
@@ -28,13 +33,13 @@
   color: white;
   margin: 0;
   padding: 14px 16px;
-  background-color: #333;
+  background-color: #777;
   border: none;
   font-family: inherit;
   font-size: 1em;
 }
 #logOut:hover {
-  background-color: #111;
+  background-color: #555;
 }
 
 /* GALLERY CSS */
@@ -88,20 +93,23 @@
   margin: 50px auto;
   display: flex;
   border-radius: 10px;
-  box-shadow: 1px 1px 10px #ddd,
-              -1px -1px 10px #ddd,
-              1px -1px 10px #ddd,
-              -1px 1px 10px #ddd;
+  box-shadow: 1px 1px 10px #ddd, -1px -1px 10px #ddd, 1px -1px 10px #ddd,
+    -1px 1px 10px #ddd;
 }
 .form-image {
   width: 50%;
   background-image: url("https://images.unsplash.com/photo-1620127682229-33388276e540?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3VtbWVyJTIwYmVhY2h8ZW58MHx8MHx8&w=1000&q=80");
-  /* background: url("https://www.rivierabch.com/filestorage/57799/58066/Seagals.jpg"); */
-  /* background: url("https://imgc.allpostersimages.com/img/posters/boardwalk-on-the-beach-key-west-florida_u-L-PZ4ZXP0.jpg?artPerspective=n"); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 10px 0 0 10px;
+}
+.edit-image {
+  width: 50%;
+  background-position: center;
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+  /* border-radius: 10px 0 0 10px; */
 }
 .form-info {
   text-align: center;
@@ -129,6 +137,15 @@ fieldset {
 textarea {
   height: 190px;
   border: 2px solid #555;
+}
+.submit {
+  width: 60%;
+  padding: 5px;
+  border-radius: 5px;
+}
+.submit:hover {
+  background-color: #999;
+  color: white;
 }
 
 /* SHOW CSS */

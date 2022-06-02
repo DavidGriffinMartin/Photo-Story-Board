@@ -4,12 +4,20 @@
 
   <body>
     <%- include("../partials/nav.ejs") %>
-    <h1>Edit</h1>
+    <div class="form-container">
+      <div class="edit-image"></div>
+      <div class="form-info">
+        <h1>EDIT POST</h1>
+        <form action="/crud/<%=post._id%>?_method=PUT" method="POST">
+          <fieldset class="form-inputs">
+            <input class="inp" placeholder="<%=post.image%>" type="text" name="image" /><br />
+            <input class="inp"  placeholder="<%=post.title%>" type="text" name="title" /><br />
+            <textarea class="inp"  placeholder="<%=post.body%>" type="text" name="body"></textarea
+            ><br />
+          </fieldset>
+          <input class="submit" type="submit" value="Submit Changes" />
+        </form>
+      </div>
+    </div>
   </body>
-  <form action="/crud/<%=post._id%>?_method=PUT" method="POST">
-    <input placeholder="Image" type="text" name="image" /><br />
-    <input placeholder="Title" type="text" name="title" /><br />
-    <input placeholder="Body" type="text" name="body" /><br />
-    <input type="submit" value="Submit Changes" />
-  </form>
 </html>
