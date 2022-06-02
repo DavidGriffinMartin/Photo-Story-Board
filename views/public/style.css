@@ -11,8 +11,8 @@
   border-radius: 10px;
   box-shadow: 1px 1px 10px #ddd, -1px -1px 10px #ddd, 1px -1px 10px #ddd,
     -1px 1px 10px #ddd;
-  width: 60%;
-  min-width: 600px;
+  width: 600px;
+  /* min-width: 600px; */
 }
 .nav > li {
   float: left;
@@ -106,10 +106,11 @@
 }
 .edit-image {
   width: 50%;
+  background-image: url("https://images.unsplash.com/photo-1620127682229-33388276e540?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3VtbWVyJTIwYmVhY2h8ZW58MHx8MHx8&w=1000&q=80");
   background-position: center;
-  /* background-size: cover; */
-  /* background-repeat: no-repeat; */
-  /* border-radius: 10px 0 0 10px; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px 0 0 10px;
 }
 .form-info {
   text-align: center;
@@ -134,14 +135,29 @@ fieldset {
   /* border: 1px solid var(--light-green); */
   border-radius: 5px;
 }
-textarea {
-  height: 190px;
+.desc-new {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: 180px;
+  border: 2px solid #555;
+}
+.desc-edit {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: 135px;
   border: 2px solid #555;
 }
 .submit {
   width: 60%;
   padding: 5px;
   border-radius: 5px;
+  margin-bottom: 15px;
 }
 .submit:hover {
   background-color: #999;
@@ -149,6 +165,16 @@ textarea {
 }
 
 /* SHOW CSS */
+.show-container {
+  max-width: 600px;
+  min-height: 550px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px #ddd, -1px -1px 10px #ddd, 1px -1px 10px #ddd,
+    -1px 1px 10px #ddd;
+}
 .show-image {
   height: 350px;
   width: 350px;

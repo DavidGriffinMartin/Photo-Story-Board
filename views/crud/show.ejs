@@ -4,18 +4,14 @@
 
   <body>
     <%- include("../partials/nav.ejs") %>
-    <h1>Show</h1>
-<img src="<%=post.image%>" class="show-image" alt="">
-    <ul>
-      <li><%=post.title%></li>
-      <li><%=post.body%></li>
-    </ul>
-    <form
-      action="/crud/<%=post.id %>?_method=DELETE"
-      method="POST"
-    >
-      <a href="/crud/<%=post._id %>/edit">Edit</a></br>
-      <input type="submit" value="DELETE" />
-    </form>
+    <div class="show-container">
+      <div class="show-info">
+        <a href="/crud/<%=post._id %>/edit"
+          ><img src="<%=post.image%>" class="show-image" alt=""
+        /></a>
+        <h1><%=post.title%></h1>
+        <p><%=post.body%></p>
+      </div>
+    </div>
   </body>
 </html>
