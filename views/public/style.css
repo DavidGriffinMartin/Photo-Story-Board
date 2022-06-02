@@ -1,3 +1,4 @@
+/* NAV BAR CSS */
 .nav {
   list-style-type: none;
   margin: 0;
@@ -8,11 +9,9 @@
   top: 0;
   width: 100%; */
 }
-
 .nav > li {
   float: left;
 }
-
 .nav > li a {
   display: block;
   color: white;
@@ -20,11 +19,9 @@
   padding: 14px 16px;
   text-decoration: none;
 }
-
 .nav > li a:hover {
   background-color: #111;
 }
-
 #logOut {
   float: right;
   display: block;
@@ -40,14 +37,7 @@
   background-color: #111;
 }
 
-body {
-  background-color: white;
-}
-
-h1 {
-  text-align: center;
-}
-
+/* GALLERY CSS */
 .flex-container {
   display: flex;
   flex-direction: row-reverse;
@@ -63,12 +53,10 @@ h1 {
   grid-gap: 10px;
   grid-auto-flow: dense; */
 }
-
 .flex-item {
   position: relative;
   text-align: center;
 }
-
 /* .flex-item:hover {
   border-radius: 30px;
   opacity: 0.5;
@@ -82,20 +70,69 @@ h1 {
   visibility: hidden;
   opacity: 0;
 }
-
 .gallery-image {
   position: relative;
   vertical-align: top;
   height: 200px;
   width: 200px;
 }
-
 .gallery-image:hover {
   border-radius: 30px;
   opacity: 0.5;
 }
 
+/* NEW / EDIT POST CSS */
+.form-container {
+  max-width: 600px;
+  min-height: 550px;
+  margin: 50px auto;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px #ddd,
+              -1px -1px 10px #ddd,
+              1px -1px 10px #ddd,
+              -1px 1px 10px #ddd;
+}
+.form-image {
+  width: 50%;
+  background-image: url("https://images.unsplash.com/photo-1620127682229-33388276e540?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3VtbWVyJTIwYmVhY2h8ZW58MHx8MHx8&w=1000&q=80");
+  /* background: url("https://www.rivierabch.com/filestorage/57799/58066/Seagals.jpg"); */
+  /* background: url("https://imgc.allpostersimages.com/img/posters/boardwalk-on-the-beach-key-west-florida_u-L-PZ4ZXP0.jpg?artPerspective=n"); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px 0 0 10px;
+}
+.form-info {
+  text-align: center;
+  width: 50%;
+  background: #f9f9f9;
+  border-radius: 0 10px 10px 0;
+  padding: 15px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+fieldset {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px 0;
+}
+.inp {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  box-sizing: border-box;
+  /* border: 1px solid var(--light-green); */
+  border-radius: 5px;
+}
+textarea {
+  height: 190px;
+  border: 2px solid #555;
+}
+
+/* SHOW CSS */
 .show-image {
-  height: 400px;
-  width: 400px;
+  height: 350px;
+  width: 350px;
 }
