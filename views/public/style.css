@@ -80,10 +80,12 @@
   vertical-align: top;
   height: 200px;
   width: 200px;
+  border-radius: 5px;
 }
 .gallery-image:hover {
   border-radius: 30px;
-  opacity: 0.5;
+  /* opacity: 0.5; */
+  filter: invert(100%);
 }
 
 /* NEW / EDIT POST CSS */
