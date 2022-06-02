@@ -160,6 +160,11 @@ fieldset {
   padding: 5px;
   border-radius: 5px;
   margin-bottom: 15px;
+  background-color: #74c9fe;
+  border: none;
+  color: white;
+  box-shadow: 1px 1px 10px #eee, -1px -1px 10px #eee, 1px -1px 10px #eee,
+  -1px 1px 10px #eee;
 }
 .submit:hover {
   background-color: #999;
