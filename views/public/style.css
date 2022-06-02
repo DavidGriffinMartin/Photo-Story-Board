@@ -31,29 +31,37 @@
   color: white;
   margin: 0;
   padding: 14px 16px;
-  background-color: #111;
+  background-color: #333;
   border: none;
   font-family: inherit;
   font-size: 1em;
 }
+#logOut:hover {
+  background-color: #111;
+}
+
+body {
+  background-color: white;
+}
 
 h1 {
-  /* text-align: center; */
+  text-align: center;
 }
 
 .flex-container {
-  /* display: flex;
+  display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap-reverse;
   justify-content: center;
+  row-gap: 5px;
   column-gap: 5px;
-  padding: 5px; */
+  padding: 5px;
   /* background-color: #333; */
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat (4, max(200px, 200px));
   justify-content: center;
   grid-gap: 10px;
-  grid-auto-flow: dense;
+  grid-auto-flow: dense; */
 }
 
 .flex-item {

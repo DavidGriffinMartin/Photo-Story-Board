@@ -1,7 +1,7 @@
 // REQUIRE DEPENDENCIES ------------------------
 const express = require("express");
 const session = require("express-session");
-const css = require("express-static");
+// const css = require("express-static");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 require("dotenv").config();
@@ -30,15 +30,17 @@ app.use(
     saveUninitialized: false,
   })
 );
+app.use(express.static(__dirname + '/views/public'));
 app.use("/crud", postsController);
 app.use("/users", userController);
 app.use("/sessions", sessionsController);
-app.use(css("./views/public"))
+// app.use(css("./views/public"))
 
-// TEST ROUTE ---------------------------------
+
+// INDEX REDIRECT ROUTE -------------------------
 app.get("/", (req, res) => {
   if (req.session.currentUser) {
-    res.render("crud/index.ejs", {
+    res.render("views/index.ejs", {
       currentUser: req.session.currentUser,
     });
   } else {
@@ -48,6 +50,7 @@ app.get("/", (req, res) => {
   }
 });
 
+// TEST ROUTE ---------------------------------
 app.get("/test", (req, res) => {
   if (req.session.currentUser) {
     res.render("test.ejs", {
