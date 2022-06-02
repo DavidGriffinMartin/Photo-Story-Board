@@ -136,6 +136,7 @@ fieldset {
   box-sizing: border-box;
   /* border: 1px solid var(--light-green); */
   border-radius: 5px;
+  border: 2px solid #555;
 }
 .desc-new {
   width: 100%;
