@@ -1,4 +1,4 @@
-# Welcome to my photoBooth app!
+# Welcome to my photoStory app!
 
 <h3>Introduction:</h3>
 
@@ -10,7 +10,7 @@ I’ve created an application that allows users to login and post picture storie
 
 <h3>Getting started:</h3>
 
-<li>Getting started is easy. Just <a href=“https://pure-springs-19384.herokuapp.com/crud”>Go Here</a> and register!</li>
+<li>Getting started is simple ! Just <a href="https://pure-springs-19384.herokuapp.com/crud">Go Here</a> and click the button !</li>
 
 <h3>User Interface:</h3>
 
