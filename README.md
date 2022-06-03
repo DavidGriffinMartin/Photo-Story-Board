@@ -20,7 +20,7 @@ I’ve created an application that allows users to login and post picture storie
 
 <h3>Technologies Used:</h3>
 
-<li>HTML, CSS, JavaScript, NPM, Express, MongoDB, Mongoose.</li>
+<li>HTML, CSS, JavaScript, NPM, Express, MongoDB, Mongoose, BCrypt.</li>
 
 <h3>Future enhancements:</h3>
 
