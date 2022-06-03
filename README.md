@@ -2,11 +2,11 @@
 
 <h3>Introduction:</h3>
 
-I’ve created an application that allows users to login and post picture stories to their picture storyboard.
+I’ve created an application that allows users to login and post picture stories to their storyboard.
 
 <h3>As a User:</h3>
 
-<li>As a user you will be able to create an account, login, and start posting pictures with stories to your storyboard. You will be able to create new posts, edit existing posts, and delete previous posts.</li>
+<li>As a user you will be able to create an account, login, and start posting pictures stories. You will be able to create new posts, edit existing posts, and delete previous posts.</li>
 
 <h3>Getting started:</h3>
 
