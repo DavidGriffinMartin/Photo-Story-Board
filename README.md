@@ -25,7 +25,7 @@ I’ve created an application that allows users to login and post picture storie
 <h3>Future enhancements:</h3>
 
 <li>User specific storyboards.</li>
-<li>Updated image show page.</li>
+<li>Updated image show and edit pages.</li>
 <li>Responsive grid picture posting.</li>
 <li>Post-able user stories, not just pictures!</li>
 <li>Media queries.</li>
