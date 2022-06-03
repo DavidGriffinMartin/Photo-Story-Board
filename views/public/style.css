@@ -1,7 +1,7 @@
 /* NAV BAR CSS */
 .nav {
   list-style-type: none;
-  margin: auto;
+  margin: 50px auto;
   padding: 0;
   overflow: hidden;
   background-color: #74c9fe;
@@ -27,6 +27,9 @@
 .nav > li a:hover {
   background-color: #3fb4fc;
 }
+.logo {
+  float: right;
+}
 #logOut {
   float: right;
   display: block;
@@ -44,6 +47,7 @@
 
 /* GALLERY CSS */
 .flex-container {
+  margin-top: 45px;
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap-reverse;
@@ -81,6 +85,8 @@
   height: 200px;
   width: 200px;
   border-radius: 5px;
+  box-shadow: 1px 1px 10px #ddd, -1px -1px 10px #ddd, 1px -1px 10px #ddd,
+  -1px 1px 10px #ddd;
 }
 .gallery-image:hover {
   border-radius: 30px;
@@ -122,6 +128,35 @@
   padding: 15px;
   box-sizing: border-box;
   overflow: auto;
+}
+.show-container {
+  max-width: 600px;
+  min-height: 550px;
+  margin: 50px auto;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px #ddd, -1px -1px 10px #ddd, 1px -1px 10px #ddd,
+    -1px 1px 10px #ddd;
+}
+.show-image {
+  width: 50%;
+  /* background-image: url(`${post.image}`); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px 0 0 10px;
+}
+.show-image-id {
+  width: 1000px;
+}
+.show-info {
+  text-align: center;
+  width: 50%;
+  background: #f9f9f9;
+  border-radius: 0 10px 10px 0;
+  padding: 15px;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
 }
 fieldset {
   border: 1px solid #ccc;
@@ -168,12 +203,12 @@ fieldset {
   -1px 1px 10px #eee;
 }
 .submit:hover {
-  background-color: #999;
+  background-color: #3fb4fc;
   color: white;
 }
 
 /* SHOW CSS */
-.show-container {
+/* .show-container {
   max-width: 600px;
   min-height: 550px;
   margin: 50px auto;
@@ -186,4 +221,4 @@ fieldset {
 .show-image {
   height: 350px;
   width: 350px;
-}
+} */

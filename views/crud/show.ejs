@@ -5,12 +5,18 @@
   <body>
     <%- include("../partials/nav.ejs") %>
     <div class="show-container">
+      <div class="show-image">
+        <div class="show-image-id">
+          <a href="/crud/<%=post._id %>/edit"
+            ><img src="<%=post.image%>" class="show-image" alt=""
+          /></a>
+        </div>
+      </div>
       <div class="show-info">
-        <a href="/crud/<%=post._id %>/edit"
-          ><img src="<%=post.image%>" class="show-image" alt=""
-        /></a>
         <h1><%=post.title%></h1>
-        <p><%=post.body%></p>
+        <fieldset class="show-inputs">
+          <p><%=post.body%></p>
+        </fieldset>
       </div>
     </div>
   </body>
