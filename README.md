@@ -6,7 +6,7 @@ I’ve created an application that allows users to login and post picture storie
 
 <h3>As a User:</h3>
 
-<li>As a user you will be able to create an account, login, and start posting pictures stories. You will be able to create new posts, edit existing posts, and delete previous posts.</li>
+<li>As a user you will be able to create an account, login, and start posting picture stories. You will be able to create new posts, edit existing posts, and delete previous posts.</li>
 
 <h3>Getting started:</h3>
 
