@@ -28,3 +28,4 @@ I’ve created an application that allows users to login and post picture storie
 <li>Updated image show page.</li>
 <li>Responsive grid picture posting.</li>
 <li>Post-able user stories, not just pictures!</li>
+<li>Media queries.</li>
